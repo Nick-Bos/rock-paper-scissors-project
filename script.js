@@ -10,43 +10,44 @@ function computerPlay(){
     let value = getRandomInt(0, 2);
       
 if (value === 0){
-    console.log("Rock")
+    return "rock"
 } else if ( value === 1){
-    console.log("Paper")
-} else console.log("Scissors")
+    return "paper"
+} else return "scissors"
 };
 
 
 //play round function
 function  playRound(playerSelection, computerSelection){
-    
     let gameMessage;
     if (playerSelection == computerSelection){
         gameMessage = "Draw";
-
-    } else if (playerSelection == "rock" && computerSelection == 1){
+    
+    } else if (playerSelection == "rock" && computerSelection == "paper"){
         gameMessage = "Paper beats Rock, you lose!";
 
-    }else if (playerSelection == "scissors" && computerSelection == 1){
+    }else if (playerSelection == "scissors" && computerSelection == "paper"){
         gameMessage = "Scissors beats Paper, you win!";
 
-    }else if (playerSelection == "paper" && computerSelection == 0){
+    }else if (playerSelection == "paper" && computerSelection == "rock"){
         gameMessage = "Paper beats Rock, you win!";
 
-    }else if (playerSelection == "scissors" && computerSelection == 0){
+    }else if (playerSelection == "scissors" && computerSelection == "rock"){
 
-    }else if (playerSelection  == "rock" && computerSelection == 2){
+    }else if (playerSelection  == "rock" && computerSelection == "scissors"){
         gameMessage = "Rock beats Scissors, you win!";
 
-    }else if (playerSelection == "paper" && computerSelection == 2){
+    }else if (playerSelection == "paper" && computerSelection == "scissors"){
         gameMessage = "Scissors beats Paper, you lose";
-    } 
-
+    }else  return "error"
+    
     return gameMessage;
-
+    
 };
-
 
 const playerSelection = "rock";
 const computerSelection = computerPlay();
 console.log(playRound(playerSelection, computerSelection));
+
+//  game function
+function game()
