@@ -1,8 +1,9 @@
-debugger
 
 const rock = 0;
 const paper = 1;
 const scissors = 2;
+let playerScore = 0;
+let computerScore = 0;
 //random integer function
 function getRandomInt(min, max){
    return Math.floor(Math.random()*(max-min+1)+min); 
@@ -17,22 +18,17 @@ function computerPlay(){
     return "paper"
     } else return "scissors"
 };
-
-
 //play round function
-
-
 function  playRound(){
     let gameMessage;
 
     let computerSelection = computerPlay();
 
-    let playerSelection = prompt("Player Choice").toLocaleLowerCase();
+    let playerSelection = prompt("Please enter rock, paper or scissors").toLocaleLowerCase();
 
     if (playerSelection == "rock" && computerSelection == "paper"){
         computerScore ++;
     
-
     }else if (playerSelection == "scissors" && computerSelection == "paper"){
         playerScore ++;
 
@@ -82,27 +78,17 @@ function  playRound(){
     
 };
 
-
-
-
-
- 
-
-
-let playerScore = 0;
-let computerScore = 0;
-
-//write game()function that plays 5 rounds
-
-
-//write if statement for score counter
-function scoreLogger(){
-    console.log(playerScore)
-    console.log(computerScore)
+function winner(){
+    if (computerScore <  playerScore){
+        console.log("Congratulation! You won the Game")
+    } else {
+        console.log("You lost the game. Better luck next time!")
+    }
 }
 
-// score must increment and save score each round 
-//consol.log winner after 5 rounds
+function PlayAgain(){
+    console.log("would you like to play again?")
+}
 
 //  game function
 function game(){
@@ -110,7 +96,10 @@ function game(){
     playRound()
     playRound()
     playRound()
-    
+    playRound()
+    playRound()
+    winner()
+    PlayAgain()
 
     
 
@@ -121,4 +110,4 @@ game()
 
 
 
-// trouble? find out how to run 1 game at a time in console!
+
