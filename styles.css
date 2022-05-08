@@ -1,0 +1,36 @@
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 400px;
+}
+
+.gameMessage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.winner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playAgain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playerResults{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.computerResults{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
